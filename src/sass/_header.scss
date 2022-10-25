@@ -1,0 +1,124 @@
+header {
+  height: 60px;
+  min-width: 100%;
+
+  .header-container {
+    background-color: #e2e2e2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 5% 0px 5%;
+    min-width: min-content;
+  }
+
+}
+
+.header-logo {
+  flex: 1;
+
+  .logo-container,
+  .home-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: 60px;
+    cursor: pointer;
+    
+    .logo-gif-container,
+    .logo-wordmark-container {
+      height: 100%;
+      width: fit-content;
+      min-width: max-content;
+      padding: 5px;
+    }
+    .logo-gif-container {
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+    .logo-wordmark-container {
+      padding-left: 0px;
+    }
+    .logo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .logo-gif {
+      padding: 6.5px 0px 6.5px 0px;
+    }
+  }
+}
+
+.header-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+
+  .link-container {
+    height: 100%;
+    margin: 0 4vw 0 0;
+
+    .link {
+      white-space: nowrap;
+      cursor: pointer;
+    }
+  }
+}
+
+.header-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+
+    .icon {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .icon-search {
+      padding: 1px;
+    }
+  }
+
+  .header-controls__search,
+  .header-controls__cart {
+    width: 24px;
+    margin-right: 1rem;
+  }
+
+  .header-controls__nav {
+    .icon-1, .icon-2, .icon-3 {
+      width: 24px;
+      height: 3px;
+      background-color: #000000;
+      border-radius: 5px;
+    }
+  
+    .hamburger-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 3px;
+      cursor: pointer;
+      // &:hover {
+      //   transform: scale(1.2);
+      //   box-shadow: 0px 0px 30px rgba(0,0,0,0.1);
+      // }
+    }
+  }
+}
