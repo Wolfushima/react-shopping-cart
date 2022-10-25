@@ -1,9 +1,15 @@
 header {
-  height: 60px;
+  height: 100%;
   min-width: 100%;
+  width: 100%;
+  position: sticky;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 90000;
 
   .header-container {
-    background-color: #e2e2e2;
+    background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -37,6 +43,10 @@ header {
     .logo-gif-container {
       padding-right: 0px;
       padding-left: 0px;
+      
+      @include breakpoint-down(xx-small) {
+        display: none;
+      }
     }
     .logo-wordmark-container {
       padding-left: 0px;
@@ -59,6 +69,10 @@ header {
   align-items: center;
   width: fit-content;
 
+  @include breakpoint-down(x-small) {
+    display: none;
+  }
+
   .link-container {
     height: 100%;
     margin: 0 4vw 0 0;
@@ -66,6 +80,8 @@ header {
     .link {
       white-space: nowrap;
       cursor: pointer;
+      text-decoration: none;
+      color: #000000;
     }
   }
 }
