@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import filmsLoader from './utils/filmsLoader';
 import ErrorPage from './error-page';
 import Root from './routes/root';
 import Home from './routes/Home';
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       {
         path: '/shop',
         element: <Shop />,
+        loader: filmsLoader,
       },
     ],
   },
