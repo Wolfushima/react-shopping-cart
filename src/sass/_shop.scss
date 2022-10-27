@@ -1,0 +1,55 @@
+.root-subheader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  width: 100%;
+  min-height: 100px;
+  height: 50vh;
+  background-position: center center;
+  background-position: 50% calc(-20vh - 20px);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../assets/images/shop/ponyo-scene.jpg);
+  transition: ease all .5s;
+
+  @include breakpoint-down(small) {
+    height: 30vh;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, hsl(0deg 0% 0% / 35%) 0%, hsl(210deg 100% 10% / 76%) 100%);
+    background-attachment: fixed;
+    background-position: 50% calc(-20vh - 20px);
+  }
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Spectral', serif;
+    color: #f5f5f5;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 4rem;
+    text-shadow: 0 0 10px black;
+    transition: ease all .5s;
+
+    @include breakpoint-down(small) {
+      font-size: 2.5rem;
+      line-height: 3rem;
+    }
+    @include breakpoint-down(x-small) {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+  }
+}
+
