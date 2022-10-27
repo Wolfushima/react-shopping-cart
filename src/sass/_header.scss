@@ -68,8 +68,9 @@
   justify-content: center;
   align-items: center;
   width: fit-content;
+  font-size: $font-sm;
 
-  @include breakpoint-down(x-small) {
+  @include breakpoint-down(small) {
     display: none;
   }
 
