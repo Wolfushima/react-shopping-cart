@@ -6,7 +6,7 @@ import addToCardIcon from '../assets/images/add-to-cart.png';
 import searchIcon from '../assets/images/search.png';
 
 const Header = () => (
-  <header>
+  <header className="root-header">
     <div className="header-container">
       <div className="header-logo">
         <Link to="/" className="home-link">
