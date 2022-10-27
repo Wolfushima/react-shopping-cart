@@ -78,10 +78,14 @@
     margin: 0 4vw 0 0;
 
     .link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       white-space: nowrap;
       cursor: pointer;
       text-decoration: none;
-      color: #000000;
+      font-family: 'Spectral', serif;
+      color: #252525;
     }
   }
 }
