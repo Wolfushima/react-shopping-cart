@@ -1,10 +1,12 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import filmsLoader from './utils/filmsLoader';
+import filmLoader from './utils/filmLoader';
 import ErrorPage from './error-page';
 import Root from './routes/root';
 import Home from './routes/Home';
 import Shop from './routes/shop/Shop';
+import Films from './routes/Films';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,11 @@ const router = createBrowserRouter([
         path: '/shop',
         element: <Shop />,
         loader: filmsLoader,
+      },
+      {
+        path: 'films/:filmId',
+        element: <Films />,
+        loader: filmLoader,
       },
     ],
   },
