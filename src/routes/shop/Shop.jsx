@@ -9,10 +9,9 @@ const Shop = () => {
   const featuredFilm = findFilm('Grave of the Fireflies');
 
   return (
-    <>
-      <ShopHeader />
+    <ShopHeader>
       <ShopFeaturedFilm featuredFilm={featuredFilm} />
-    </>
+    </ShopHeader>
   );
 };
 

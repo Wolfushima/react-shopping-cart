@@ -1,13 +1,12 @@
 import React from 'react';
 
-const ShopHeader = () => (
+const ShopHeader = ({ children }) => (
   <header className="root-subheader">
     <div className="root-subheader__container">
       <h1 className="root-subheader__title">
-        SHOP THE
-        <br />
-        COLLECTION
+        SHOP THE COLLECTION
       </h1>
+      {children}
     </div>
   </header>
 );
