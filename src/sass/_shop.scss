@@ -1,3 +1,4 @@
+// SHOP SUBHEADER
 .root-subheader {
   display: flex;
   justify-content: center;
@@ -52,3 +53,140 @@
   }
 }
 
+//SHOP FEATURED FILM
+.shop-featured-film {
+  height: calc(100vh - 50vh - 60px);
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: ease all .5s;
+  color: $black-text;
+
+  @include breakpoint-down(small) {
+    height: calc(100vh - 30vh - 60px);
+  }
+
+  &__container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    max-height: 100%;
+    padding: 10px;
+    gap: 15px;
+    @include breakpoint-down(small) {
+      justify-content: space-evenly;
+    }
+    @include breakpoint-down(x-small) {
+      justify-content: space-evenly;
+    }
+    @include breakpoint-down(xx-small) {
+      flex-direction: column;
+      gap: 0px;
+    }
+    // FEATURED FILM-IMAGE
+    .shop-featured-film__img-container {
+      height: 100%;
+      width: 25%;
+      filter: grayscale(100%);
+      @include breakpoint-down(x-small) {
+        width: 25%;
+      }
+      @include breakpoint-down(xx-small) {
+        width: 100%;
+        height: 25%;
+      }
+      .shop-featured-film__img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    // FEATURED FILM
+    .shop-featured-film__film {
+      width: 75%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      @include breakpoint-up(x-large) {
+        gap: 10px;
+      }
+      @include breakpoint-down(x-small) {
+        width: 75%;
+      }
+      @include breakpoint-down(xx-small) {
+        width: 100%;
+        height: 75%;
+      }
+      .shop-featured-film__title{
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 2.5px;
+        align-self: flex-start;
+        font-weight: 100;
+        font-size: $font-xsm;
+        @include breakpoint-up(x-large) {
+          font-size: $font-sm;
+        }
+      }
+      .shop-featured-film__info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+
+        .shop-featured-film-film-title {
+          font-family: 'Montserrat', sans-serif;
+          font-size: $font-xlg;
+          align-self: flex-start;
+          font-weight: 500;
+          color: #16008f;
+          @include breakpoint-down(large) {
+            font-size: $font-lg;
+          }
+        }
+        .shop-featured-film__description{
+          font-family: 'Spectral', serif;
+          font-size: $font-xsm;
+          font-size: $font-sm;
+          @include breakpoint-up(x-large) {
+            font-size: $font-med;
+          }
+          @include breakpoint-down(x-small) {
+            font-size: $font-sm;
+          }
+        }
+      }
+      .shop-featured-film__button {
+        background-color: $yellow-button;
+        align-self: flex-start;
+        border: none;
+        font-family: 'Montserrat', sans-serif;
+        padding: 2px 6px 2px 6px;
+        cursor: pointer;
+        opacity: 0.8;
+        @include breakpoint-down(xx-small) {
+          align-self: center;
+        }
+        &:hover {
+          opacity: 1;
+        }
+        :only-child {
+          text-decoration: none;
+          color: $white-text;
+          font-size: $font-xsm;
+        }
+
+      }
+    }
+  }
+}
