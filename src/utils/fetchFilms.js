@@ -4,7 +4,7 @@ const fetchFilms = async () => {
     const response = await fetch(url, { mode: 'cors' });
     if (!response.ok) { throw (response.status); }
     const films = await response.json();
-    return films;
+    return films ?? null;
   } catch (err) {
     return null;
   }
