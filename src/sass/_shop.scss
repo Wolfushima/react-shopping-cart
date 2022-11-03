@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 100px;
+  min-height: 400px;
   height: calc(100vh - 60px);
   background-position: center center;
   background-attachment: fixed;
@@ -54,6 +54,7 @@
 
 //SHOP FEATURED FILM
 .shop-featured-film {
+  min-height: 200px;
   height: calc(100vh - 50vh - 60px);
   width: 100%;
   background-color: whitesmoke;
