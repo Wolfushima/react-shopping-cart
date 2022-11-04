@@ -190,3 +190,100 @@
     }
   }
 }
+
+// TOP RATED FILMS
+.top-rated-films {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 10px 5% 10px 5%;
+  padding: 5%;
+  background-color: white;
+  background: rgb(213,213,213);
+  background: linear-gradient(90deg, rgba(233,233,233,1) 0%, rgba(242,242,242,1) 50%, rgba(233,233,233,1) 100%);
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f6f6f6;
+  }
+  &__header {
+    font-size: $font-xlg;
+    font-family: 'Montserrat', sans-serif;
+    margin: 30px 0 0 0;
+    font-family: 'Spectral', serif;
+    color: $grey-text-light;
+    width: 100%;
+    text-align: center;
+    @include breakpoint-down(small) {
+      font-size: $font-lg;
+    }
+  }
+  &__films {
+    padding: 0 5%;
+    @include breakpoint-down(xx-small) {
+      padding: 0 0;
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      list-style-type: none;
+      gap: 10px;
+      margin: 30px 0;
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          background-color: white;
+          transform: scale(1.01);
+          box-shadow: 0 0 10px #acacac;
+        }
+      }
+      a {
+        text-decoration: none;
+        max-width: 200px;
+        min-width: 200px;
+        margin: 10px;
+      }
+      figure {
+        width: 100%;
+      }
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      figcaption{
+
+      }
+      dl{
+        color: $black-text;
+        font-family: 'Montserrat', sans-serif;
+        font-size: $font-sm;
+        :first-child {
+          font-size: $font-xsm;
+          color: $yellow-button;
+        }
+        :nth-child(2) {
+          font-weight: 900;
+        }
+        dd{
+          font-family: 'Spectral', serif;
+          font-size: $font-xsm;
+          color: $grey-text;
+        }
+      }
+
+    }
+  }
+
+
+}
+
