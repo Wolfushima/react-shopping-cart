@@ -1,0 +1,250 @@
+.film-product {
+  width: 100%;
+  min-width: 320px;
+  font-family: 'Montserrat', sans-serif;
+  &__container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    gap: 40px;
+    margin-bottom: 40px;
+    @include breakpoint-down(small) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__left {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include breakpoint-down(small) {
+      height: auto;
+      width: 100%;
+    }
+    @include breakpoint-down(x-small) {
+      width: 80%;
+    }
+    .film-product__img-container {
+      min-height: 400px;
+      max-height: 500px;
+      height: 500px;
+      @include breakpoint-down(x-small) {
+        max-height: min-content;
+        min-height: 300px;
+        height: auto;
+        width: 100%;
+        margin-bottom: -5px;
+      }
+      @include breakpoint-down(xx-small) {
+        height: auto;
+        min-height: 300px;
+        width: 100%;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    form {
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      max-width: 333.333px;
+      position: relative;
+      font-size: 15px;
+      @include breakpoint-down(small) {
+        width: 333.333px;
+      }
+      @include breakpoint-down(x-small) {
+        width: 100%;
+        max-width: 100%;
+      }
+        // --- PRICE TOTAL ---
+        .priceTotal {
+          font-family: 'Montserrat', sans-serif;
+          text-align: center;
+          background-color: black;
+          color: white;
+          padding: 10px 0;
+        }
+        // --- QUANTITY INPUT ---
+        .quantityInput {
+          background-color: black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          max-width: 100%;
+          padding: 10px 0;
+          input[type = "number"] {
+            font-family: 'Montserrat', sans-serif;
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield;
+            appearance: textfield;
+            display: inline-flex;
+            text-align: center;
+            border: none;
+            justify-content: center;
+            width: 40px;
+            font-size: $font-sm;
+            height: 40px;
+            font-weight: bold;
+            text-align: center;
+            color: $white-text;
+            background-color: $light-grey-background;
+            background-color: black;
+            pointer-events: none;
+          }
+          input[type=number]::-webkit-inner-spin-button,
+          input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+          }
+          button {
+            outline:none;
+            -webkit-appearance: none;
+            background: radial-gradient(circle, rgb(43 43 43) 0%, rgb(47 47 47) 100%);
+            color: $white-text;
+            border: none;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            margin: 0;
+            position: relative;
+            border-radius: 50%;
+          }
+        }
+        // --- SUBMIT BUTTON ---
+        input[type = "submit"] {
+          font-family: 'Montserrat', sans-serif;
+          font-size: $font-xsm;
+          padding: 15px 20px;
+          background-color: blue;
+          color: #f0f0f0;
+          background: radial-gradient(circle, #890000 0%, #770000 100%);
+          border: none;
+          cursor: pointer;
+        }
+        // --- RADIO BUTTONS ---
+        .radioBtn {
+          position: relative;
+          display: block;
+          label {
+            font-family: 'Spectral', serif;
+            font-size: $font-xsm;
+            display: block;
+            background: #161616;
+            color: #f0f0f0;
+            padding: 5px 20px;
+            background: radial-gradient(circle, rgb(43 43 43) 0%, rgb(47 47 47) 100%);
+            cursor: pointer;
+          }
+          label:after,
+          label:before {
+            content: "";
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+          }
+          label:before {
+            background: transparent;
+            z-index: 2;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-size: 13px;
+            background-position: center;
+            width: 0;
+            height: 0;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNS4zIDEzLjIiPiAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE0LjcuOGwtLjQtLjRhMS43IDEuNyAwIDAgMC0yLjMuMUw1LjIgOC4yIDMgNi40YTEuNyAxLjcgMCAwIDAtMi4zLjFMLjQgN2ExLjcgMS43IDAgMCAwIC4xIDIuM2wzLjggMy41YTEuNyAxLjcgMCAwIDAgMi40LS4xTDE1IDMuMWExLjcgMS43IDAgMCAwLS4yLTIuM3oiIGRhdGEtbmFtZT0iUGZhZCA0Ii8+PC9zdmc+);
+          }
+          input[type="radio"] {
+            display: none;
+            position: absolute;
+            width: 100%;
+            appearance: none;
+          }
+          input[type="radio"]:checked + label {
+            background: radial-gradient(circle, rgb(43 43 43) 0%, rgb(47 47 47) 100%);
+            background: radial-gradient(circle, #897800 0%, #775d00 100%);
+          }
+          input[type="radio"]:checked + label:before {
+              width: 20px;
+              height: 20px;
+          }
+        }
+    }
+  }
+
+  &__right {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    min-height: 100%;
+    gap: 20px;
+    margin-right: 20px;
+    padding-top: 40px;
+    @include breakpoint-down(small) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right: 0;
+      width: 80%;
+      padding-top: 0;
+    }
+    header{
+      h1 {
+        font-size: $font-xlg;
+        font-weight: 100;
+        color: $black-text;
+        margin-bottom: 30px;
+      }
+      p {
+        font-size: $font-sm;
+        color: $yellow-button;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+    .film-product__description-container {
+      // align-self: flex-start;
+    }
+    .film-product__description {
+      color: $black-text;
+      font-family: 'Spectral', serif;
+      font-size: $font-med;
+      @include breakpoint-down(medium) {
+        font-size: $font-sm;
+      }
+    }
+    .film-product__film-info {
+      color: $grey-text-light;
+      :first-child {
+        font-family: 'Spectral', serif;
+        font-size: $font-sm;
+        font-weight: 900;
+        letter-spacing: 1px;
+      }
+      :nth-child(odd):not(:first-child) {
+        color: $yellow-button;
+        white-space: nowrap;
+      }
+      :nth-child(even) {
+        margin-bottom: 5px;
+      }
+      
+      p {
+        font-size: $font-xsm;
+      }
+    }
+  }
+}
