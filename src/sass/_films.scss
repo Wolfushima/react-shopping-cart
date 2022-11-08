@@ -15,18 +15,21 @@
       align-items: center;
     }
   }
+
   &__left {
     width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: black;
     @include breakpoint-down(small) {
       height: auto;
       width: 100%;
     }
     @include breakpoint-down(x-small) {
-      width: 80%;
+      width: 100%;
+      // padding: 0 10%;
     }
     .film-product__img-container {
       min-height: 400px;
@@ -55,10 +58,13 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       width: 100%;
       max-width: 333.333px;
       position: relative;
       font-size: 15px;
+      background-color: black;
+      gap: 5px;
       @include breakpoint-down(small) {
         width: 333.333px;
       }
@@ -73,6 +79,9 @@
           background-color: black;
           color: white;
           padding: 10px 0;
+          font-weight: 900;
+          letter-spacing: 1px;
+          margin-top: 2.5%;
         }
         // --- QUANTITY INPUT ---
         .quantityInput {
@@ -82,7 +91,6 @@
           align-items: center;
           width: 100%;
           max-width: 100%;
-          padding: 10px 0;
           input[type = "number"] {
             font-family: 'Montserrat', sans-serif;
             -webkit-appearance: textfield;
@@ -98,7 +106,6 @@
             font-weight: bold;
             text-align: center;
             color: $white-text;
-            background-color: $light-grey-background;
             background-color: black;
             pointer-events: none;
           }
@@ -107,52 +114,64 @@
             -webkit-appearance: none;
           }
           button {
+            font-family: 'Montserrat', sans-serif;
             outline:none;
             -webkit-appearance: none;
-            background: radial-gradient(circle, rgb(43 43 43) 0%, rgb(47 47 47) 100%);
+            background-color: rgb(0, 0, 0);
             color: $white-text;
+            // color: gray;
             border: none;
             align-items: center;
             justify-content: center;
             width: 40px;
-            height: 40px;
+            height: 60px;
             cursor: pointer;
             margin: 0;
             position: relative;
-            border-radius: 50%;
+            font-size: $font-xlg;
+            flex: 1;
+            &:hover {
+              color: #890000;
+            }
           }
         }
         // --- SUBMIT BUTTON ---
         input[type = "submit"] {
+          width: 95%;
           font-family: 'Montserrat', sans-serif;
           font-size: $font-xsm;
           padding: 15px 20px;
-          background-color: blue;
           color: #f0f0f0;
           background: radial-gradient(circle, #890000 0%, #770000 100%);
           border: none;
           cursor: pointer;
+          margin-bottom: 2.5%;
+          margin-top: 20px;
+          &:hover {
+            background: radial-gradient(circle, hsl(0, 80%, 27%) 0%, hsl(0, 80%, 23%) 100%);
+          }
         }
         // --- RADIO BUTTONS ---
         .radioBtn {
           position: relative;
           display: block;
+          width: 95%;
           label {
             font-family: 'Spectral', serif;
             font-size: $font-xsm;
             display: block;
-            background: #161616;
+            background: #000000;
             color: #f0f0f0;
-            padding: 5px 20px;
-            background: radial-gradient(circle, rgb(43 43 43) 0%, rgb(47 47 47) 100%);
+            padding: 15px 20px;
             cursor: pointer;
+            border: 1px solid $light-grey-background;
           }
           label:after,
           label:before {
             content: "";
             position: absolute;
-            right: 4px;
-            top: 4px;
+            right: 14px;
+            top: 14px;
             width: 20px;
             height: 20px;
           }
@@ -175,11 +194,13 @@
           }
           input[type="radio"]:checked + label {
             background: radial-gradient(circle, rgb(43 43 43) 0%, rgb(47 47 47) 100%);
-            background: radial-gradient(circle, #897800 0%, #775d00 100%);
           }
           input[type="radio"]:checked + label:before {
               width: 20px;
               height: 20px;
+          }
+          input[type="radio"]:hover + label {
+            background: gray;
           }
         }
     }
