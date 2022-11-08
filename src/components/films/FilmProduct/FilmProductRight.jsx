@@ -1,4 +1,5 @@
 import React from 'react';
+import FilmProductBonusFeatures from './FilmProductBonusFeatures';
 
 const FilmProductRight = ({ film }) => (
   <div className="film-product__right">
@@ -10,6 +11,7 @@ const FilmProductRight = ({ film }) => (
       <div className="film-product__description">
         {film.description}
       </div>
+      <FilmProductBonusFeatures film={film} />
     </div>
 
     <div className="film-product__film-info">

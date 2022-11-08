@@ -9,10 +9,10 @@
     align-items: stretch;
     flex-direction: row;
     gap: 40px;
-    margin-bottom: 40px;
     @include breakpoint-down(small) {
       flex-direction: column;
       align-items: center;
+      margin-bottom: 40px;
     }
   }
 
@@ -29,7 +29,6 @@
     }
     @include breakpoint-down(x-small) {
       width: 100%;
-      // padding: 0 10%;
     }
     .film-product__img-container {
       min-height: 400px;
@@ -237,12 +236,16 @@
       }
     }
     .film-product__description-container {
-      // align-self: flex-start;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-evenly;
     }
     .film-product__description {
       color: $black-text;
       font-family: 'Spectral', serif;
       font-size: $font-med;
+      flex: 1;
       @include breakpoint-down(medium) {
         font-size: $font-sm;
       }
@@ -265,6 +268,29 @@
       
       p {
         font-size: $font-xsm;
+      }
+    }
+    // BONUS FEATURES
+    .film-product__bonus-features {
+      font-family: 'Spectral', serif;
+      font-size: $font-xsm;
+      margin-top: 20px;
+      margin-bottom: 72.755px;
+      color: $black-text;
+      @include breakpoint-down(small) {
+        margin-top: 40px;
+      }
+      p {
+        color: #8b8b8b;
+        font-weight: 900;
+        letter-spacing: 1px;
+        font-size: $font-sm;
+      }
+      ul {
+        list-style-position: inside;
+        margin-left: 1rem;
+        margin-top: 5px;
+        color: $black-text;
       }
     }
   }
