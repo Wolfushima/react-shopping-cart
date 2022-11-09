@@ -23,6 +23,7 @@
 
 .header-logo {
   flex: 1;
+  z-index: 999999;
 
   .logo-container,
   .home-link {
@@ -98,6 +99,7 @@
   justify-content: center;
   align-items: center;
   height: 60px;
+  z-index: 999999;
 
   .icon-container {
     display: flex;
@@ -123,6 +125,8 @@
   }
 
   .header-controls__nav {
+    border: none;
+    background: none;
     .icon-1, .icon-2, .icon-3 {
       width: 24px;
       height: 3px;
@@ -142,5 +146,79 @@
       //   box-shadow: 0px 0px 30px rgba(0,0,0,0.1);
       // }
     }
+  }
+}
+
+nav {
+  margin-left: auto;
+  display: none;
+  ul {
+    display: flex;
+    padding-top: 60px;
+    right: 0;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    width: 30%;
+    height: 100vh;
+    min-width: 300px;
+    background-color: rgb(29 29 29);
+    border-top: 1px solid black;
+    @include breakpoint-down(small) {
+      width: 100%;
+      min-width: 100%;
+    }
+    // @include breakpoint-down(small) {
+    //   position: absolute;
+    //   top: 60px;
+    //   left: 0;
+    //   flex-direction: column;
+    //   width: 100%;
+    //   height: calc(100vh - 60px);
+    //   background-color: #003dffc2;
+    //   border-top: 1px solid black;
+    // }
+  }
+  li {
+    list-style-type: none;
+    margin: 0 1rem;
+    text-align: center;
+    margin: 0;
+    // @include breakpoint-down(small) {
+    //   text-align: center;
+    //   margin: 0;
+    // }
+  }
+  li a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    color: black;
+    width: 100%;
+    padding: 1.5rem 0;
+    color: white;
+    // @include breakpoint-down(small) {
+    //   color: black;
+    //   width: 100%;
+    //   padding: 1.5rem 0;
+    //   color: white;
+    // }
+  }
+}
+nav.expanded {
+  display: block;
+  // @include breakpoint-down(small) {
+  //   display: block;
+  // }
+}
+.header-controls.expanded {
+  filter: invert(100%) sepia(0%) saturate(12%) hue-rotate(219deg) brightness(104%) contrast(105%);
+}
+.header-links.expanded {
+  display: none;
+}
+.header-logo.expanded {
+  @include breakpoint-down(small) {
+    filter: invert(100%) sepia(0%) saturate(12%) hue-rotate(219deg) brightness(104%) contrast(105%);
   }
 }
