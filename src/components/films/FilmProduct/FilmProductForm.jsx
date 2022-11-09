@@ -12,9 +12,9 @@ const RadioBtn = ({
 );
 
 const FilmProductForm = ({
-  priceTotal, quantity, edition, handleIncrease, handleDecrease, handleChange,
+  priceTotal, quantity, edition, handleIncrease, handleDecrease, handleChange, handleSubmit,
 }) => (
-  <form onSubmit={(e) => e.preventDefault()}>
+  <form onSubmit={handleSubmit}>
     <div className="priceTotal">{`$${priceTotal}`}</div>
     <div className="quantityInput">
       <button onClick={handleDecrease} type="button">-</button>

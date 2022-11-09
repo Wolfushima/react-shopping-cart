@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import FilmProductForm from './FilmProductForm';
+import { useCart } from '../../../utils/CartContext';
 
 const pricePerMinute = {
   collectorsEdition: 0.24153225806,
@@ -9,9 +10,14 @@ const pricePerMinute = {
 const filmPrice = (runTime, edition, quantity) => (runTime * pricePerMinute[edition]) * quantity;
 
 const FilmProductLeft = ({ film }) => {
+  const { setCurrentCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [priceTotal, setPriceTotal] = useState('');
   const [edition, setEdition] = useState('collectorsEdition');
+
+  const addToCart = (item) => {
+    setCurrentCart((prevState) => [...prevState, item]);
+  };
 
   const handleClickQuantity = (step) => {
     if ((quantity === 1 && step === 'down') || (quantity === 10 && step === 'up')) return;
@@ -21,6 +27,13 @@ const FilmProductLeft = ({ film }) => {
 
   const handleChangeEdition = (e) => {
     setEdition(() => e.target.id);
+  };
+
+  const handleSubmit = (e) => {
+    addToCart({
+      filmTitle: film.title, priceTotal, quantity, edition,
+    });
+    e.preventDefault();
   };
 
   useEffect(() => {
@@ -49,6 +62,7 @@ const FilmProductLeft = ({ film }) => {
         handleIncrease={() => handleClickQuantity('up')}
         handleDecrease={() => handleClickQuantity('down')}
         handleChange={handleChangeEdition}
+        handleSubmit={handleSubmit}
       />
     </div>
   );
