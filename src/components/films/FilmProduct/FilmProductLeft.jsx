@@ -10,13 +10,24 @@ const pricePerMinute = {
 const filmPrice = (runTime, edition, quantity) => (runTime * pricePerMinute[edition]) * quantity;
 
 const FilmProductLeft = ({ film }) => {
-  const { setCurrentCart } = useCart();
+  const { currentCart, setCurrentCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [priceTotal, setPriceTotal] = useState('');
   const [edition, setEdition] = useState('collectorsEdition');
 
   const addToCart = (item) => {
-    setCurrentCart((prevState) => [...prevState, item]);
+    const nextCart = [...currentCart, item];
+    const reducedCart = Object.values(nextCart.reduce((prev, curr) => {
+      if (prev[curr.id]) {
+        const newPriceTotal = prev[curr.id].priceTotal + curr.priceTotal;
+        prev[curr.id].priceTotal = newPriceTotal;
+        prev[curr.id].quantity += curr.quantity;
+      } else {
+        prev[curr.id] = { ...curr };
+      }
+      return prev;
+    }, {}));
+    setCurrentCart(reducedCart);
   };
 
   const handleClickQuantity = (step) => {
@@ -31,7 +42,12 @@ const FilmProductLeft = ({ film }) => {
 
   const handleSubmit = (e) => {
     addToCart({
-      filmTitle: film.title, priceTotal, quantity, edition,
+      id: film.title.replace(/\s/g, '') + edition,
+      filmTitle: film.title,
+      priceTotal: +priceTotal,
+      quantity,
+      edition,
+      filmImage: film.image,
     });
     e.preventDefault();
   };
