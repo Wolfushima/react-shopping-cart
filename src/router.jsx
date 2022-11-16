@@ -7,6 +7,7 @@ import Root from './routes/root';
 import Home from './routes/Home';
 import Shop from './routes/shop/Shop';
 import Films from './routes/Films';
+import Cart from './routes/shop/Cart';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
         path: '/shop',
         element: <Shop />,
         loader: filmsLoader,
+      },
+      {
+        path: '/shop/cart',
+        element: <Cart />,
       },
       {
         path: 'films/:filmId',
