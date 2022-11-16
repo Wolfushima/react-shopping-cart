@@ -26,7 +26,9 @@ const Cart = () => {
             currentCart={currentCart}
             setCurrentCart={setCurrentCart}
           />
-          <CartFooter />
+          <CartFooter
+            currentCart={currentCart}
+          />
         </div>
         <div className="cart__legal" />
       </div>

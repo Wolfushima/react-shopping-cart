@@ -214,6 +214,130 @@
     }
   }
   &__footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: space-between;
     padding: 0 5px;
+    width: 100%;
+    gap: 10%;
+    margin-top: 20px;
+    color: $black-text;
+    @include breakpoint-down(small) {
+      flex-direction: column;
+    }
+  }
+  &__total,
+  .help {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    max-width: 360px;
+    gap: 10px;
+    @include breakpoint-down(small) {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  .help {
+    @include breakpoint-down(small) {
+      margin-top: 50px;
+    }
+    p {
+      color: $grey-text-light;
+    }
+    a {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      width: 40%;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      text-decoration: none;
+      font-size: $font-xsm;
+      background-color: transparent;
+      color: $black-text;
+      border: 1px solid $black-text;
+      transition: background-color 0.2s;
+      transition-timing-function: linear;
+      &:hover {
+        background-color: $black-text;
+        color: $white-text;
+        opacity: 1;
+      }
+    }
+  }
+  &__subtotal,
+  &__shipping,
+  &__tax,
+  &__discounts,
+  &__totals {
+    font-size: $font-sm;
+    @include breakpoint-down(x-small) {
+      font-size: $font-xsm;
+    }
+    dl {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+    }
+  }
+  &__subtotal {
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 10px;
+  }
+  &__totals {
+    font-size: $font-med;
+    font-weight: 900;
+    dd {
+      color: $blue-text-dark;
+    }
+    @include breakpoint-down(x-small) {
+      font-size: $font-sm;
+    }
+  }
+  &__submit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      width: 100%;
+      background-color: $green-button;
+      align-self: flex-start;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      text-decoration: none;
+      color: $white-text;
+      font-size: $font-xsm;
+      transition: opacity 0.2s;
+      transition-timing-function: linear;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    :nth-child(2) {
+      background-color: hsl(202deg 100% 28%);
+      background-color: transparent;
+      color: $black-text;
+      border: 1px solid $black-text;
+      transition: background-color 0.2s;
+      transition-timing-function: linear;
+      &:hover {
+        background-color: $black-text;
+        color: $white-text;
+      }
+    }
   }
 }
