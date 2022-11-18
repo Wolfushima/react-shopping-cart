@@ -50,7 +50,7 @@ const CartFooter = ({ currentCart }) => {
           </dl>
         </div>
         <div className="cart__submit">
-          <Link to="#">PROCEED TO CHECKOUT</Link>
+          <Link to="/shop/checkout">PROCEED TO CHECKOUT</Link>
           <Link to="/shop">CONTINUE SHOPPING</Link>
         </div>
       </div>
