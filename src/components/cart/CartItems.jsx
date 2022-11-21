@@ -6,12 +6,22 @@ const CartItems = ({ currentCart, setCurrentCart }) => {
     const pricePerItem = item.priceTotal.toFixed(2) / item.quantity.toFixed(2);
     const nextCurrentCart = currentCart.map((currentItem) => {
       if (currentItem === item && step === 'up') {
-        currentItem.quantity += 1;
-        currentItem.priceTotal = currentItem.quantity * pricePerItem;
+        const nextQuantity = currentItem.quantity + 1;
+        const nextPriceTotal = nextQuantity * pricePerItem;
+        return {
+          ...currentItem,
+          quantity: nextQuantity,
+          priceTotal: nextPriceTotal,
+        };
       }
       if (currentItem === item && step === 'down') {
-        currentItem.quantity -= 1;
-        currentItem.priceTotal = currentItem.quantity * pricePerItem;
+        const nextQuantity = currentItem.quantity - 1;
+        const nextPriceTotal = nextQuantity * pricePerItem;
+        return {
+          ...currentItem,
+          quantity: nextQuantity,
+          priceTotal: nextPriceTotal,
+        };
       }
       return currentItem;
     });
