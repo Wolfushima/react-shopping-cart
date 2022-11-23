@@ -10,7 +10,7 @@ const HeaderControls = ({ toggleNav, className }) => (
         <img className="icon icon-search" src={searchIcon} alt="Search Icon" />
       </div>
     </Link>
-    <Link to="cart" className="header-controls__cart">
+    <Link to="/shop/cart" className="header-controls__cart">
       <div className="icon-container">
         <img className="icon icon-cart" src={addToCardIcon} alt="Cart Icon" />
       </div>
