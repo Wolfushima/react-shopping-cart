@@ -7,7 +7,7 @@ const HomeScrollDownBtn = ({ scrollToId }) => (
       aria-label="Scroll Down"
       type="button"
       onClick={() => {
-        document.getElementById(scrollToId).scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+        document.getElementById(scrollToId).scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
       }}
     />
   </div>

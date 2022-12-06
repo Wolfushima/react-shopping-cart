@@ -1,8 +1,9 @@
 import React from 'react';
+import HomeFilmDescription from './HomeFilmDescription';
 import HomeScrollDownBtn from './HomeScrollDownBtn';
 
 const HomeVideoArticle = ({
-  id, videoSrc, scrollToId,
+  id, videoSrc, scrollToId, film,
 }) => (
   <article
     id={id}
@@ -19,6 +20,7 @@ const HomeVideoArticle = ({
         type="video/mp4"
       />
     </video>
+    <HomeFilmDescription film={film} />
     <HomeScrollDownBtn scrollToId={scrollToId} />
   </article>
 );

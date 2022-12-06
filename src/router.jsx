@@ -19,6 +19,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+        loader: filmsLoader,
       },
       {
         path: '/shop',
