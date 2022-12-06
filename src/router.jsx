@@ -9,6 +9,7 @@ import Shop from './routes/shop/Shop';
 import Films from './routes/Films';
 import Cart from './routes/shop/Cart';
 import CheckOut from './routes/shop/CheckOut';
+import Browse from './routes/shop/Browse';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
         path: 'films/:filmId',
         element: <Films />,
         loader: filmLoader,
+      },
+      {
+        path: '/browse',
+        element: <Browse />,
+        loader: filmsLoader,
       },
     ],
   },
