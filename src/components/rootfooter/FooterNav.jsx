@@ -14,7 +14,8 @@ const FooterNav = ({ handleClick }) => (
       </h4>
       <ul>
         <Link
-          to="/"
+          to="/browse"
+          onClick={() => handleClick('root', '/browse')}
         >
           ALL FILMS
         </Link>
