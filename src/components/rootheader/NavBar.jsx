@@ -73,7 +73,7 @@ const NavBar = ({ className, handleClick, isNavExpanded }) => {
             onClick={(e) => handleClick(e, 'root', '/contact')}
             className="nav-link-header"
           >
-            Contact
+            Contact Us
           </Link>
         </li>
       </ul>
