@@ -10,6 +10,7 @@ import Films from './routes/Films';
 import Cart from './routes/shop/Cart';
 import CheckOut from './routes/shop/CheckOut';
 import Browse from './routes/shop/Browse';
+import Contact from './routes/Contact';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
         path: '/browse',
         element: <Browse />,
         loader: filmsLoader,
+      },
+      {
+        path: '/contact',
+        element: <Contact />,
       },
     ],
   },
