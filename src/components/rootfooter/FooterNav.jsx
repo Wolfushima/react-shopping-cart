@@ -43,10 +43,20 @@ const FooterNav = ({ handleClick }) => (
         </Link>
       </h4>
       <h4>
-        <Link to="/">About</Link>
+        <Link
+          to="/about"
+          onClick={() => handleClick('root', '/about')}
+        >
+          About
+        </Link>
       </h4>
       <h4>
-        <Link to="/">Contact</Link>
+        <Link
+          to="/contact"
+          onClick={() => handleClick('root', '/contact')}
+        >
+          Contact Us
+        </Link>
       </h4>
     </div>
   </div>
