@@ -11,6 +11,7 @@ import Cart from './routes/shop/Cart';
 import CheckOut from './routes/shop/CheckOut';
 import Browse from './routes/shop/Browse';
 import Contact from './routes/Contact';
+import About from './routes/About';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />,
+      },
+      {
+        path: '/about',
+        element: <About />,
       },
     ],
   },
