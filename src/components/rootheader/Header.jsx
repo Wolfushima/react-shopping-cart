@@ -5,9 +5,12 @@ import HeaderLogo from './HeaderLogo';
 import HeaderLinks from './HeaderLinks';
 import HeaderControls from './HeaderControls';
 import NavBar from './NavBar';
+import SearchBar from './SearchBar';
 
 const Header = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const [isSearchBarExpanded, setIsSearchBarExpanded] = useState(false);
+  const [sideBarExpanded, setSideBarExpanded] = useState(null);
   const { pathname } = useLocation();
   const { hash } = useLocation();
 
@@ -15,8 +18,27 @@ const Header = () => {
     if (hash === `#${aHash}` || pathname === aPath) {
       document.getElementById(aHash).scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
     }
+    if (isSearchBarExpanded) {
+      setIsSearchBarExpanded(!isSearchBarExpanded);
+      return;
+    }
     if (!isNavExpanded && (e.target.className === 'icon icon-cart' || e.target.className === 'link')) { return; }
     setIsNavExpanded(!isNavExpanded);
+  };
+
+  const handleClickHamburger = () => {
+    if (isSearchBarExpanded) {
+      setIsSearchBarExpanded(!isSearchBarExpanded);
+      return;
+    }
+    setIsNavExpanded(!isNavExpanded);
+  };
+
+  const handleClickSearch = () => {
+    if (isNavExpanded) {
+      setIsNavExpanded(!isNavExpanded);
+    }
+    setIsSearchBarExpanded(!isSearchBarExpanded);
   };
 
   useEffect(() => {
@@ -28,25 +50,44 @@ const Header = () => {
     }
   }, [pathname]);
 
+  useEffect(() => {
+    if (isNavExpanded) {
+      setSideBarExpanded('nav');
+      return;
+    }
+    if (isSearchBarExpanded) {
+      setSideBarExpanded('search-bar');
+      return;
+    }
+    setSideBarExpanded(null);
+  }, [isNavExpanded, isSearchBarExpanded]);
   return (
     <header className="root-header">
       <div className="header-container">
 
         <HeaderLogo
-          className={isNavExpanded ? "header-logo expanded" : "header-logo"}
+          className={sideBarExpanded ? "header-logo expanded" : "header-logo"}
         />
         <HeaderLinks
-          className={isNavExpanded ? "header-links expanded" : "header-links"}
+          className={sideBarExpanded ? "header-links expanded" : "header-links"}
           handleClick={handleClick}
         />
         <HeaderControls
           handleClick={handleClick}
-          className={isNavExpanded ? "header-controls expanded" : "header-controls"}
+          handleClickSearch={handleClickSearch}
+          handleClickHamburger={handleClickHamburger}
+          isSearchBarExpanded={isSearchBarExpanded}
+          className={sideBarExpanded ? "header-controls expanded" : "header-controls"}
         />
         <NavBar
           className={isNavExpanded ? "expanded" : null}
           handleClick={handleClick}
           isNavExpanded={isNavExpanded}
+        />
+        <SearchBar
+          className={isSearchBarExpanded ? "search-bar expanded" : "search-bar"}
+          isSearchBarExpanded={isSearchBarExpanded}
+          handleClickSearch={handleClickSearch}
         />
 
       </div>
