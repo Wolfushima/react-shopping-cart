@@ -87,7 +87,13 @@
       cursor: pointer;
       text-decoration: none;
       font-family: 'Spectral', serif;
-      color: #252525;
+      // color: #252525;
+      color: black;
+      transition: color 0.1s ease-in;
+      // color: $yellow-button;
+      &:hover {
+        color: $yellow-button;
+      }
     }
   }
 }
