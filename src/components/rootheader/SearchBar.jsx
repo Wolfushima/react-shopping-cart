@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Form } from 'react-router-dom';
 import SearchBarResult from './SearchBarResult';
 import fetchFilms from '../../utils/fetchFilms';
 
@@ -9,10 +10,6 @@ const SearchBar = ({ className, isSearchBarExpanded, handleClickSearch }) => {
 
   const handleChange = (e) => {
     setSearchValue(() => e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
   };
 
   const handleClickLink = () => {
@@ -61,9 +58,10 @@ const SearchBar = ({ className, isSearchBarExpanded, handleClickSearch }) => {
     <div className={className}>
       <div className="search-bar__container">
         <h3>SEARCH</h3>
-        <form
-          action=""
-          onSubmit={(e) => handleSubmit(e)}
+        <Form
+          action="/search"
+          method="get"
+          onSubmit={handleClickSearch}
         >
           <i className="fa fa-search" />
           <input
@@ -71,9 +69,13 @@ const SearchBar = ({ className, isSearchBarExpanded, handleClickSearch }) => {
             placeholder="Search"
             onChange={(e) => handleChange(e)}
             value={searchValue}
+            name="q"
           />
-          <input type="submit" value="&#xf101;" />
-        </form>
+          <input
+            type="submit"
+            value="&#xf101;"
+          />
+        </Form>
         {
           searchResult
             ? (

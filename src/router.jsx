@@ -12,6 +12,7 @@ import CheckOut from './routes/shop/CheckOut';
 import Browse from './routes/shop/Browse';
 import Contact from './routes/Contact';
 import About from './routes/About';
+import Search from './routes/Search';
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,15 @@ const router = createBrowserRouter([
       {
         path: '/about',
         element: <About />,
+      },
+      {
+        path: '/search',
+        element: <Search />,
+        loader: async ({ request }) => {
+          const url = new URL(request.url);
+          const searchTerm = url.searchParams.get('q');
+          return { searchTerm };
+        },
       },
     ],
   },

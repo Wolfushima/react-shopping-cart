@@ -392,6 +392,10 @@ nav.expanded {
       color: $white-text;
     }
   }
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
   input[type = "text"] {
     flex: 1;
     width: 100%;
