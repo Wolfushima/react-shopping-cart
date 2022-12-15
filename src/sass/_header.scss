@@ -223,25 +223,25 @@ nav.expanded {
   ul {
     transform: translateX(0%);
     :nth-child(1) {
-      animation: navLinkFade 0.5s ease forwards calc(1 / 7 )+ 0.3s;
+      animation: navLinkFade 0.5s ease forwards calc(1 / 7 )+ 0.1s;
     }
     :nth-child(2) {
-      animation: navLinkFade 0.5s ease forwards calc(2 / 7 )+ 0.3s;
+      animation: navLinkFade 0.5s ease forwards calc(2 / 7 )+ 0.1s;
     }
     :nth-child(3) {
-      animation: navLinkFade 0.5s ease forwards calc(3 / 7 )+ 0.3s;
+      animation: navLinkFade 0.5s ease forwards calc(3 / 7 )+ 0.1s;
     }
     :nth-child(4) {
-      animation: navLinkFade 0.5s ease forwards calc(4 / 7 )+ 0.3s;
+      animation: navLinkFade 0.5s ease forwards calc(4 / 7 )+ 0.1s;
     }
     :nth-child(5) {
-      animation: navLinkFade 0.5s ease forwards calc(5 / 7 )+ 0.3s;
+      animation: navLinkFade 0.5s ease forwards calc(5 / 7 )+ 0.1s;
     }
     :nth-child(6) {
-      animation: navLinkFade 0.5s ease forwards calc(6 / 7 )+ 0.3s;
+      animation: navLinkFade 0.5s ease forwards calc(6 / 7 )+ 0.1s;
     }
     :nth-child(7) {
-      animation: navLinkFade 0.5s ease forwards calc(7 / 7 )+ 0.3s;
+      animation: navLinkFade 0.5s ease forwards calc(7 / 7 )+ 0.1s;
     }
   }
 }
