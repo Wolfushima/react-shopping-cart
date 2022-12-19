@@ -1,16 +1,20 @@
 /* eslint-disable quotes */
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useCart } from '../../utils/CartContext';
 import HeaderLogo from './HeaderLogo';
 import HeaderLinks from './HeaderLinks';
 import HeaderControls from './HeaderControls';
 import NavBar from './NavBar';
 import SearchBar from './SearchBar';
+import CartMsg from './CartMsg';
 
 const Header = () => {
+  const { currentCart } = useCart();
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isSearchBarExpanded, setIsSearchBarExpanded] = useState(false);
   const [sideBarExpanded, setSideBarExpanded] = useState(null);
+  const [showCartMsg, setShowCartMsg] = useState(false);
   const { pathname } = useLocation();
   const { hash } = useLocation();
 
@@ -22,8 +26,14 @@ const Header = () => {
       setIsSearchBarExpanded(!isSearchBarExpanded);
       return;
     }
-    if (!isNavExpanded && (e.target.className === 'icon icon-cart' || e.target.className === 'link')) { return; }
+    if (!isNavExpanded && e.target.className === 'link') { return; }
     setIsNavExpanded(!isNavExpanded);
+  };
+  const hideCartMsg = () => {
+    setShowCartMsg(() => false);
+  };
+  const handleClickCart = () => {
+    setShowCartMsg((prev) => !prev);
   };
 
   const handleClickHamburger = () => {
@@ -61,6 +71,13 @@ const Header = () => {
     }
     setSideBarExpanded(null);
   }, [isNavExpanded, isSearchBarExpanded]);
+
+  useEffect(() => {
+    if (currentCart.length > 0 && pathname !== '/shop/cart') {
+      setShowCartMsg(() => true);
+    } else setShowCartMsg(() => false);
+  }, [currentCart]);
+
   return (
     <header className="root-header">
       <div className="header-container">
@@ -76,6 +93,7 @@ const Header = () => {
           handleClick={handleClick}
           handleClickSearch={handleClickSearch}
           handleClickHamburger={handleClickHamburger}
+          handleClickCart={handleClickCart}
           isSearchBarExpanded={isSearchBarExpanded}
           className={sideBarExpanded ? "header-controls expanded" : "header-controls"}
         />
@@ -90,6 +108,16 @@ const Header = () => {
           handleClickSearch={handleClickSearch}
         />
 
+        {
+          showCartMsg
+          && (
+          <CartMsg
+            currentCart={currentCart}
+            showCartMsg={showCartMsg}
+            hideCartMsg={hideCartMsg}
+          />
+          )
+        }
       </div>
     </header>
   );
