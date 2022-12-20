@@ -171,9 +171,12 @@
         align-self: flex-start;
         border: none;
         font-family: 'Montserrat', sans-serif;
-        padding: 2px 6px 2px 6px;
+        height: 40px;
+        width: 120px;
         cursor: pointer;
         opacity: 0.8;
+        transition: opacity 0.2s;
+        transition-timing-function: linear;
         @include breakpoint-down(xx-small) {
           align-self: center;
         }
