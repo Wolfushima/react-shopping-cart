@@ -7,6 +7,7 @@ const SearchBar = ({ className, isSearchBarExpanded, handleClickSearch }) => {
   const [films, setFilms] = useState();
   const [searchResult, setSearchResult] = useState(null);
   const [searchValue, setSearchValue] = useState('');
+  const [isSearching, setIsSearching] = useState(false);
 
   const handleChange = (e) => {
     setSearchValue(() => e.target.value);
@@ -22,13 +23,17 @@ const SearchBar = ({ className, isSearchBarExpanded, handleClickSearch }) => {
     if (!regExp.test(searchValue)) {
       setSearchResult(() => null);
     } else {
+      setIsSearching(() => true);
       const result = films.filter((film) => (
         film.title.toLowerCase().replace(/\s|'/g, '').includes(searchValue.toLowerCase().replace(/\s|'/g, ''))
       ));
-      if (result.length > 0) {
-        setSearchResult(() => result);
-        return;
-      } setSearchResult(() => null);
+      setTimeout(() => {
+        setIsSearching(() => false);
+        if (result.length > 0) {
+          setSearchResult(() => result);
+          return;
+        } setSearchResult(() => null);
+      }, 1000);
     }
   }, [searchValue]);
 
@@ -63,7 +68,13 @@ const SearchBar = ({ className, isSearchBarExpanded, handleClickSearch }) => {
           method="get"
           onSubmit={handleClickSearch}
         >
-          <i className="fa fa-search" />
+          <div className="search-bar__search-icon">
+            {
+              isSearching
+                ? <i className="fa fa-refresh fa-spin" />
+                : <i className="fa fa-search" />
+            }
+          </div>
           <input
             type="text"
             placeholder="Search"

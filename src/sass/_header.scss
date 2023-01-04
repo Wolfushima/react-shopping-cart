@@ -376,12 +376,7 @@ nav.expanded {
     flex-direction: row;
     margin-top: 15px;
   }
-  .fa-search {
-    font-size: $font-sm;
-    color: $white-text;
-    font-size: $font-sm;
-    width: auto;
-    padding: 0 20px;
+  &__search-icon {
     border: 2px solid $grey-text-light;
     border-right: none;
     border-left: none;
@@ -389,6 +384,14 @@ nav.expanded {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 20px;
+    width: auto;
+    i {
+      font-size: $font-sm;
+      color: $white-text;
+      font-size: $font-sm;
+      width: auto;
+    }
   }
   input[type = "submit"] {
     font-family: 'Montserrat', sans-serif;

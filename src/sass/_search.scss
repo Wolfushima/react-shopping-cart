@@ -37,18 +37,20 @@
     width: 100%;
     max-width: 730px;
   }
-  .fa-search {
-    color: $grey-text;
-    font-size: $font-sm;
-    width: auto;
-    padding: 0 20px;
-    padding-right: 0;
+  &__search-icon {
     border: 1px solid #b7b7b7;
     border-right: none;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 20px;
+    width: auto;
+    i {
+      font-size: $font-sm;
+      color: $grey-text;
+      width: auto;
+    }
   }
   input[type = "submit"] {
     font-family: 'Montserrat', sans-serif;

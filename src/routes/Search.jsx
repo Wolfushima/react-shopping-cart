@@ -9,19 +9,24 @@ const Search = () => {
   const [films, setFilms] = useState();
   const [searchResult, setSearchResult] = useState(null);
   const [searchValue, setSearchValue] = useState(searchTerm);
+  const [isSearching, setIsSearching] = useState(false);
 
   const updateSearchResult = (data, value) => {
     const regExp = /[a-zA-Z]/g;
     if (!regExp.test(value)) {
       setSearchResult(() => null);
     } else {
+      setIsSearching(() => true);
       const result = data.filter((film) => (
         film.title.toLowerCase().replace(/\s|'/g, '').includes(value.toLowerCase().replace(/\s|'/g, ''))
       ));
-      if (result.length > 0) {
-        setSearchResult(() => result);
-        return;
-      } setSearchResult(() => null);
+      setTimeout(() => {
+        setIsSearching(() => false);
+        if (result.length > 0) {
+          setSearchResult(() => result);
+          return;
+        } setSearchResult(() => null);
+      }, 1000);
     }
   };
 
@@ -63,7 +68,13 @@ const Search = () => {
               action="/search"
               onSubmit={(e) => handleSubmit(e)}
             >
-              <i className="fa fa-search" />
+              <div className="search__search-icon">
+                {
+                  isSearching
+                    ? <i className="fa fa-refresh fa-spin" />
+                    : <i className="fa fa-search" />
+                }
+              </div>
               <input
                 type="text"
                 placeholder="Search"
