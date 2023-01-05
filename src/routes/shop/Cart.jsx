@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useCart } from '../../utils/CartContext';
+import CartEmpty from '../../components/cart/CartEmpty';
 import CartHeader from '../../components/cart/CartHeader';
 import CartItems from '../../components/cart/CartItems';
 import CartFooter from '../../components/cart/CartFooter';
@@ -18,17 +19,25 @@ const Cart = () => {
       <header className="cart__topheader">YOUR CART</header>
       <div className="cart__wrapper">
         <div className="cart__container">
-          <CartHeader
-            currentCart={currentCart}
-            isCartEmpty={isCartEmpty}
-          />
-          <CartItems
-            currentCart={currentCart}
-            setCurrentCart={setCurrentCart}
-          />
-          <CartFooter
-            currentCart={currentCart}
-          />
+          {
+            isCartEmpty
+              ? <CartEmpty />
+              : (
+                <>
+                  <CartHeader
+                    currentCart={currentCart}
+                    isCartEmpty={isCartEmpty}
+                  />
+                  <CartItems
+                    currentCart={currentCart}
+                    setCurrentCart={setCurrentCart}
+                  />
+                  <CartFooter
+                    currentCart={currentCart}
+                  />
+                </>
+              )
+          }
         </div>
         <div className="cart__legal" />
       </div>
