@@ -168,6 +168,9 @@
       }
       .shop-featured-film__button {
         background-color: $yellow-button;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         align-self: flex-start;
         border: none;
         font-family: 'Montserrat', sans-serif;
@@ -177,18 +180,15 @@
         opacity: 0.8;
         transition: opacity 0.2s;
         transition-timing-function: linear;
+        color: $white-text;
+        font-size: $font-xsm;
+        text-decoration: none;
         @include breakpoint-down(xx-small) {
           align-self: center;
         }
         &:hover {
           opacity: 1;
         }
-        :only-child {
-          text-decoration: none;
-          color: $white-text;
-          font-size: $font-xsm;
-        }
-
       }
     }
   }

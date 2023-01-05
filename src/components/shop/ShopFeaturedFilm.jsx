@@ -23,14 +23,12 @@ const ShopFeaturedFilm = ({ featuredFilm }) => (
             {featuredFilm.description}
           </p>
         </div>
-        <button
-          type="button"
+        <Link
+          to={`/films/${featuredFilm.title.replace(/\s/g, '')}`}
           className="shop-featured-film__button"
         >
-          <Link to={`/films/${featuredFilm.title.replace(/\s/g, '')}`}>
-            BUY NOW
-          </Link>
-        </button>
+          BUY NOW
+        </Link>
       </div>
     </div>
   </div>
