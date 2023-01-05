@@ -13,6 +13,7 @@ import Browse from './routes/shop/Browse';
 import Contact from './routes/Contact';
 import About from './routes/About';
 import Search from './routes/Search';
+import Confirmation from './routes/shop/Confirmation';
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
           const searchTerm = url.searchParams.get('q');
           return { searchTerm };
         },
+      },
+      {
+        path: '/shop/confirmation',
+        element: <Confirmation />,
       },
     ],
   },

@@ -1,0 +1,104 @@
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 60px 5%;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(90deg, rgba(233,233,233,1) 0%, rgba(242,242,242,1) 50%, rgba(233,233,233,1) 100%);
+  color: $black-text;
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__container {
+    width: 100%;
+    max-width: 1440px;
+    background-color: white;
+    padding: 30px 20%;
+    @include breakpoint-down(small) {
+      padding: 30px 10%;
+    }
+  }
+  &__topheader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    h1 {
+      font-family: 'Spectral', serif;
+      font-size: $font-xlg;
+    }
+    img {
+      object-fit: cover;
+      width: inherit;
+      max-width: 500px;
+      height: auto;
+      margin: 30px 0 30px 0;
+      @include breakpoint-down(small) {
+        max-width: 400px;
+      }
+    }
+    p {
+      font-size: $font-sm;
+      color: $grey-text-light;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: $font-sm;
+      margin-bottom: 20px;
+      color: $grey-text-light;
+      @include breakpoint-down(small) {
+        font-size: $font-sm;
+      }
+    }
+  }
+  &__contactus {
+    text-decoration: none;
+    color: $blue-text-dark;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__line {
+    height: 1px;
+    width: 100%;
+    background-color: whitesmoke;
+    margin-bottom: 30px;
+  }
+  &__continue-shopping {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    width: 350px;
+    max-width: 400px;
+    cursor: pointer;
+    opacity: 0.8;
+    text-decoration: none;
+    font-size: $font-sm;
+    color: $white-text;
+    background-color: $yellow-button;
+    border: none;
+    transition: background-color 0.2s;
+    transition-timing-function: linear;
+    @include breakpoint-down(small) {
+      width: 100%;
+      font-size: $font-xsm;
+    }
+    &:hover {
+      background-color: $black-text;
+      opacity: 1;
+    }
+  }
+}
