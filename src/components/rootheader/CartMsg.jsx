@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const CartMsg = ({ currentCart, showCartMsg, hideCartMsg }) => {
+  const [isCartEmpty, setIsCartEmpty] = useState(true);
   const duration = 500; // ms
   const delay = 100; // ms
   const animStr = (i) => `fadeIn ${duration}ms ease-out ${delay * i}ms forwards`;
@@ -26,6 +27,11 @@ const CartMsg = ({ currentCart, showCartMsg, hideCartMsg }) => {
     const quantityTotal = newCart.reduce((prev, curr) => prev + curr.quantity, 0);
     return quantityTotal;
   };
+
+  useEffect(() => {
+    if (currentCart.length > 0) setIsCartEmpty(false);
+    if (currentCart.length === 0) setIsCartEmpty(true);
+  }, [currentCart]);
 
   useEffect(() => {
     if (showCartMsg) {
@@ -71,9 +77,19 @@ const CartMsg = ({ currentCart, showCartMsg, hideCartMsg }) => {
           <Link to="/shop/cart">
             <p>VIEW CART</p>
           </Link>
-          <Link to="/shop/checkout">
-            <p>CHECKOUT</p>
-          </Link>
+          {
+            isCartEmpty
+              ? (
+                <Link to="/shop/cart">
+                  <p>CHECKOUT</p>
+                </Link>
+              )
+              : (
+                <Link to="/shop/checkout">
+                  <p>CHECKOUT</p>
+                </Link>
+              )
+          }
         </div>
       </div>
     </div>
