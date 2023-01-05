@@ -22,8 +22,8 @@ const CheckOutSummary = ({
           </tr>
         </thead>
         <tbody>
-          {currentCart.map((item) => (
-            <tr className="checkout__item">
+          {currentCart.map((item, index) => (
+            <tr className="checkout__item" key={index}>
               <td>{item.quantity}</td>
               <td>
                 {handleEdition(item.edition)}
