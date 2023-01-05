@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../utils/CartContext';
 import CheckOutShipping from '../../components/checkout/CheckOutShipping';
 import CheckOutBilling from '../../components/checkout/CheckOutBilling';
@@ -6,7 +7,8 @@ import CheckOutSummary from '../../components/checkout/CheckOutSummary';
 import CheckOutFooter from '../../components/checkout/CheckOutFooter';
 
 const CheckOut = () => {
-  const { currentCart } = useCart();
+  const navigate = useNavigate();
+  const { currentCart, setCurrentCart } = useCart();
   const [guestConfirmationInfo, setGuestConfirmationInfo] = useState();
   const [isOrderPlaced, setIsOrderPlaced] = useState(false);
   const [isSameAsShipping, setisSameAsShipping] = useState(true);
@@ -95,7 +97,7 @@ const CheckOut = () => {
       );
       setBillingAddress(nextBillingAddress);
     }
-    setIsOrderPlaced((prev) => !prev);
+    setIsOrderPlaced(() => true);
     e.preventDefault();
   };
 
@@ -149,6 +151,10 @@ const CheckOut = () => {
         CARD_INFO: { ...cardInfo },
         CURRENT_CART: { ...currentCart },
       });
+      setTimeout(() => {
+        setCurrentCart([]);
+        navigate('/shop/confirmation');
+      }, 3000);
     }
   }, [isOrderPlaced]);
 
@@ -178,6 +184,7 @@ const CheckOut = () => {
               subtotal={subtotal}
               shipping={shipping}
               total={total}
+              isOrderPlaced={isOrderPlaced}
             />
             <CheckOutFooter />
           </form>

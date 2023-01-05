@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CheckOutSummary = ({
-  currentCart, subtotal, total, shipping,
+  currentCart, subtotal, total, shipping, isOrderPlaced,
 }) => {
   const handleEdition = (itemEdition) => {
     if (itemEdition === 'dvdEdition') return <span>[DVD]</span>;
@@ -63,7 +63,16 @@ const CheckOutSummary = ({
           </tr>
         </tbody>
       </table>
-      <input type="submit" value="Place Secure Order" />
+      {
+        !isOrderPlaced
+          ? <input type="submit" value="Place Secure Order" />
+          : (
+            <div className="checkout__submitloading">
+              <i className="fa fa-refresh fa-spin" />
+              <p>Processing payment</p>
+            </div>
+          )
+      }
     </div>
   );
 };

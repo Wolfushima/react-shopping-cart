@@ -331,4 +331,28 @@
       opacity: 1;
     }
   }
+  &__submitloading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    width: 40%;
+    background-color: $green-button;
+    align-self: flex-end;
+    border: none;
+    cursor: wait;
+    opacity: 0.8;
+    text-decoration: none;
+    color: $white-text;
+    font-size: $font-xsm;
+    transition: opacity 0.2s;
+    transition-timing-function: linear;
+    margin-top: 20px;
+    p {
+      margin-left: 10px;
+    }
+    @include breakpoint-down(small) {
+      width: 100%;
+    }
+  }
 }
