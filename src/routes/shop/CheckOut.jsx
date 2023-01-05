@@ -3,6 +3,7 @@ import { useCart } from '../../utils/CartContext';
 import CheckOutShipping from '../../components/checkout/CheckOutShipping';
 import CheckOutBilling from '../../components/checkout/CheckOutBilling';
 import CheckOutSummary from '../../components/checkout/CheckOutSummary';
+import CheckOutFooter from '../../components/checkout/CheckOutFooter';
 
 const CheckOut = () => {
   const { currentCart } = useCart();
@@ -178,7 +179,7 @@ const CheckOut = () => {
               shipping={shipping}
               total={total}
             />
-            <div className="checkout__footer" />
+            <CheckOutFooter />
           </form>
         </div>
       </div>

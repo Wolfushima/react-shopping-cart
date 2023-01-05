@@ -217,7 +217,8 @@
       margin: 5px 0 5px 5px;
     }
   }
-  &__billing .checkout__addressmsg {
+  &__billing .checkout__addressmsg,
+  &__footer {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -238,6 +239,11 @@
       outline: none;
     }
   }
+  &__footer {
+    margin-top: 20px;
+    width: 100%;
+    align-items: flex-end;
+  }
   // SUMMARY
   &__summary {
     padding: 10px;
@@ -252,7 +258,6 @@
   &__table {
     width: 100%;
     background-color: #e5e5e5;
-    // border: 1px solid rgb(197 197 197);
     text-align: center;
     @include breakpoint-down(xx-small) {
       font-size: $font-xsm;
