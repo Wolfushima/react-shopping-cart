@@ -60,7 +60,7 @@ const CartFooter = ({ currentCart }) => {
           You can reach our customer service department by e-mailing orders@fakestudioghibli.com or clicking below. Please note that order support e-mails are answered Monday to Friday during business hours Eastern time. We only ship our products within the United States and to Canada.
         </p>
         <div className="help__button">
-          <Link to="#">CONTACT US</Link>
+          <Link to="/contact">CONTACT US</Link>
         </div>
       </div>
     </div>
