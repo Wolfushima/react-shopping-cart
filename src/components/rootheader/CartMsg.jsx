@@ -19,7 +19,7 @@ const CartMsg = ({ currentCart, showCartMsg, hideCartMsg }) => {
     const priceTotal = newCart.reduce((prev, curr) => {
       return prev + curr.priceTotal;
     }, 0);
-    return priceTotal.toFixed(2);
+    return `$${priceTotal.toFixed(2)}`;
   };
 
   const handleQuantity = () => {
@@ -60,7 +60,7 @@ const CartMsg = ({ currentCart, showCartMsg, hideCartMsg }) => {
                   }
                 </p>
                 <p>{handleEdition(item.edition)}</p>
-                <p>{item.priceTotal.toFixed(2)}</p>
+                <p>{`$${item.priceTotal.toFixed(2)}`}</p>
               </div>
             </li>
           ))}
