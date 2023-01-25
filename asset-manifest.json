@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/react-shopping-cart/static/css/main.5563c173.css",
+    "main.js": "/react-shopping-cart/static/js/main.8361fe71.js",
+    "static/media/howls-moving-castle.mp4": "/react-shopping-cart/static/media/howls-moving-castle.8bd549a2dd49c412eb71.mp4",
+    "static/media/spirited-away.mp4": "/react-shopping-cart/static/media/spirited-away.1a5a2950078663c4e95a.mp4",
+    "static/media/aboutimg.jpg": "/react-shopping-cart/static/media/aboutimg.fbfe79e5c5ac35aff721.jpg",
+    "static/media/my-neighbor-totoro.jpg": "/react-shopping-cart/static/media/my-neighbor-totoro.9fd92b3c9df3ac161b84.jpg",
+    "static/media/logo.gif": "/react-shopping-cart/static/media/logo.6b3e4a16e5d165226ea4.gif",
+    "static/media/grave-of-the-fireflies.jpg": "/react-shopping-cart/static/media/grave-of-the-fireflies.5f982e3dc348116e51b3.jpg",
+    "static/media/confirmation.jpg": "/react-shopping-cart/static/media/confirmation.ae8169c20bdd567b25d9.jpg",
+    "static/media/ponyo-scene.jpg": "/react-shopping-cart/static/media/ponyo-scene.bac3ae8182861f909dcc.jpg",
+    "static/media/contactimg.png": "/react-shopping-cart/static/media/contactimg.0778e6ea5e2052f3bfe5.png",
+    "static/media/Studio_Ghibli_wordmark.svg": "/react-shopping-cart/static/media/Studio_Ghibli_wordmark.95c5236f9692bf60d93c5a0500604e39.svg",
+    "index.html": "/react-shopping-cart/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.5563c173.css",
+    "static/js/main.8361fe71.js"
+  ]
+}
