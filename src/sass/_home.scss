@@ -37,10 +37,9 @@
     h2 {
       font-size: 80px;
       color: $white-text;
-      font-family: "Yanone Kaffeesatz";
 	    text-align: center;
 	    color: #fcedd8;
-	   	font-family: 'Niconne', cursive;
+      font-family: 'Times New Roman', Times, serif;
 	    font-weight: 700;
       text-shadow: 5px 5px 0px #000000;
       @include breakpoint-down(small) {
