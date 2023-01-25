@@ -24,6 +24,7 @@
 .header-logo {
   flex: 1;
   z-index: 999999;
+  transition: filter 0.5s ease-in;
   .logo-container,
   .home-link {
     display: flex;
@@ -54,11 +55,13 @@
     }
     .logo {
       width: 100%;
+      max-width: 162px;
       height: 100%;
       object-fit: cover;
     }
     .logo-gif {
       padding: 6.5px 0px 6.5px 0px;
+      max-width: 46.724px;
     }
   }
 }
@@ -294,7 +297,7 @@ nav.expanded {
 .header-logo.expanded {
   @include breakpoint-down(small) {
     filter: invert(100%) sepia(0%) saturate(12%) hue-rotate(219deg) brightness(104%) contrast(105%);
-    background: hsl(0deg 0% 87%);
+    // background: hsl(0deg 0% 87%);
   }
 }
 @keyframes navLinkFade {
