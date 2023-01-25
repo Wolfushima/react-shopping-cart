@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-shopping-cart/static/css/main.3e7c4ab8.css",
+    "main.css": "/react-shopping-cart/static/css/main.15381d07.css",
     "main.js": "/react-shopping-cart/static/js/main.910d7f08.js",
     "static/media/howls-moving-castle.mp4": "/react-shopping-cart/static/media/howls-moving-castle.8bd549a2dd49c412eb71.mp4",
     "static/media/spirited-away.mp4": "/react-shopping-cart/static/media/spirited-away.1a5a2950078663c4e95a.mp4",
@@ -15,7 +15,7 @@
     "index.html": "/react-shopping-cart/index.html"
   },
   "entrypoints": [
-    "static/css/main.3e7c4ab8.css",
+    "static/css/main.15381d07.css",
     "static/js/main.910d7f08.js"
   ]
 }
