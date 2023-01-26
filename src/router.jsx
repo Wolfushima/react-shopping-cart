@@ -15,63 +15,68 @@ import About from './routes/About';
 import Search from './routes/Search';
 import Confirmation from './routes/shop/Confirmation';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-        loader: filmsLoader,
-      },
-      {
-        path: '/shop',
-        element: <Shop />,
-        loader: filmsLoader,
-      },
-      {
-        path: '/shop/cart',
-        element: <Cart />,
-      },
-      {
-        path: '/shop/checkout',
-        element: <CheckOut />,
-      },
-      {
-        path: 'films/:filmId',
-        element: <Films />,
-        loader: filmLoader,
-      },
-      {
-        path: '/browse',
-        element: <Browse />,
-        loader: filmsLoader,
-      },
-      {
-        path: '/contact',
-        element: <Contact />,
-      },
-      {
-        path: '/about',
-        element: <About />,
-      },
-      {
-        path: '/search',
-        element: <Search />,
-        loader: async ({ request }) => {
-          const url = new URL(request.url);
-          const searchTerm = url.searchParams.get('q');
-          return { searchTerm };
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Root />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+          loader: filmsLoader,
         },
-      },
-      {
-        path: '/shop/confirmation',
-        element: <Confirmation />,
-      },
-    ],
+        {
+          path: '/shop',
+          element: <Shop />,
+          loader: filmsLoader,
+        },
+        {
+          path: '/shop/cart',
+          element: <Cart />,
+        },
+        {
+          path: '/shop/checkout',
+          element: <CheckOut />,
+        },
+        {
+          path: 'films/:filmId',
+          element: <Films />,
+          loader: filmLoader,
+        },
+        {
+          path: '/browse',
+          element: <Browse />,
+          loader: filmsLoader,
+        },
+        {
+          path: '/contact',
+          element: <Contact />,
+        },
+        {
+          path: '/about',
+          element: <About />,
+        },
+        {
+          path: '/search',
+          element: <Search />,
+          loader: async ({ request }) => {
+            const url = new URL(request.url);
+            const searchTerm = url.searchParams.get('q');
+            return { searchTerm };
+          },
+        },
+        {
+          path: '/shop/confirmation',
+          element: <Confirmation />,
+        },
+      ],
+    },
+  ],
+  {
+    basename: '/react-shopping-cart',
   },
-]);
+);
 
 export default router;
