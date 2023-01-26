@@ -12,7 +12,9 @@ const FooterNewsletter = () => (
       <label htmlFor="email">
         <input type="email" name="email" placeholder="E-mail Address" />
       </label>
-      <input type="submit" value="Sign Up" />
+      <label htmlFor="signup">
+        <input type="submit" value="Sign Up" name="signup" />
+      </label>
     </div>
   </div>
 );

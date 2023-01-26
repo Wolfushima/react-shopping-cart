@@ -9,6 +9,10 @@
   padding: 5%;
   font-family: 'Montserrat', sans-serif;
   color: $white-text;
+  scroll-margin-top: 60px;
+  @include breakpoint-down(small) {
+    padding: 60px 5%;
+  }
 }
 
 .footer {
@@ -16,7 +20,7 @@
     text-align: center;
     font-size: $font-xlg;
     letter-spacing: 1px;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     @include breakpoint-down(small) {
       font-size: $font-lg;
     }
@@ -101,16 +105,28 @@
   }
   &__newsletter {
     margin-top: 80px;
+    label {
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+    }
     input[type = "submit"] {
       width: 100%;
       font-family: 'Montserrat', sans-serif;
       font-size: $font-xsm;
-      padding: 15px 20px;
+      height: 45px;
+      border-radius: 0;
+      -webkit-appearance: none;
+      -webkit-border-radius: 0 !important;
+      -moz-border-radius: 0;
       color: $white-text;
       background: $grey-text-light;
+      text-align: center;
       border: none;
       cursor: pointer;
       margin-top: 10px;
+      overflow: hidden;
+      perspective: 1px;
       &:hover {
         background: hsl(0 0% 59% / 1);
       }
@@ -119,11 +135,16 @@
       width: 100%;
       font-family: 'Montserrat', sans-serif;
       font-size: $font-xsm;
-      padding: 15px 20px;
+      padding: 0 20px;
       color: $white-text;
+      height: 45px;
       background: transparent;
       border: 2px solid $grey-text-light;
       margin-top: 20px;
+      -webkit-appearance: none;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
       &:hover {
         background: hsl(0, 0%, 12%);
       }
