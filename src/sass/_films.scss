@@ -64,6 +64,7 @@
       font-size: 15px;
       background-color: black;
       gap: 5px;
+      padding-bottom: 40px;
       @include breakpoint-down(small) {
         width: 333.333px;
       }
@@ -146,6 +147,9 @@
           cursor: pointer;
           margin-bottom: 2.5%;
           margin-top: 20px;
+          -webkit-appearance: none;
+          -webkit-border-radius: 0 !important;
+          -moz-border-radius: 0;
           &:hover {
             background: radial-gradient(circle, hsl(0, 80%, 27%) 0%, hsl(0, 80%, 23%) 100%);
           }
