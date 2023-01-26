@@ -34,19 +34,19 @@
     margin-bottom: 10px;
     font-weight: 900;
     color: #777777;
+    width: 100%;
     @include breakpoint-down(small) {
       font-size: $font-xsm;
     }
+    p {
+      width: 50%;
+    }
     :first-child {
-      @include breakpoint-down(x-small) {
-        white-space: nowrap;
-      }
-      @include breakpoint-down(xx-small) {
-        width: 100%;
-      }
+      white-space: nowrap;
     }
     :nth-child(2) {
       font-style: italic;
+      text-align: right;
     }
   }
   &__items {
