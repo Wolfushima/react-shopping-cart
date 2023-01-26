@@ -107,6 +107,7 @@
       background-color: white;
       cursor: pointer;
       border: 1px solid rgb(197 197 197);
+      color: $black-text;
       &:focus {
         outline: 1px solid $grey-text;
       }
@@ -144,6 +145,9 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
+    }
+    label:first-of-type {
+      margin-bottom: 10px;
     }
     input {
       max-width: auto;
@@ -311,7 +315,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    height: 45px;
     width: 40%;
     background-color: $green-button;
     align-self: flex-end;
@@ -354,5 +358,21 @@
     @include breakpoint-down(small) {
       width: 100%;
     }
+  }
+  input[type = "email"],
+  input[type = "text"],
+  input[type = "tel"],
+  input[type = "submit"] {
+    border-radius: 0;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0;
+  }
+  input[type = "checkbox"],
+  input[type = "radio"] {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
   }
 }
