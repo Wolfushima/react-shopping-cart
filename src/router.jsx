@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 import filmsLoader from './utils/filmsLoader';
 import filmLoader from './utils/filmLoader';
 import ErrorPage from './error-page';
@@ -15,7 +15,7 @@ import About from './routes/About';
 import Search from './routes/Search';
 import Confirmation from './routes/shop/Confirmation';
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   [
     {
       path: '/',
@@ -74,9 +74,6 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  {
-    basename: '/react-shopping-cart',
-  },
 );
 
 export default router;
