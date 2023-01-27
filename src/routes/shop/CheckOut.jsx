@@ -158,6 +158,10 @@ const CheckOut = () => {
     }
   }, [isOrderPlaced]);
 
+  useEffect(() => {
+    if (currentCart.length === 0) navigate('/shop/cart');
+  }, [currentCart]);
+
   return (
     <div id="checkout" className="checkout">
       <header className="checkout__topheader">CHECKOUT</header>
