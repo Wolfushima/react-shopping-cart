@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import FooterNav from './FooterNav';
 import FooterNewsletter from './FooterNewsletter';
 import FooterFollow from './FooterFollow';
+import FooterGithubLink from './FooterGithubLink';
 
 const Footer = () => {
   const { pathname } = useLocation();
@@ -33,6 +34,7 @@ const Footer = () => {
           <div className="footer__extras">
             <FooterNewsletter />
             <FooterFollow />
+            <FooterGithubLink />
           </div>
         </div>
       </div>
