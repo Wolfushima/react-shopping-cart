@@ -1,5 +1,7 @@
 <h1 align="center">🛒 React Studio Ghibli Shopping Cart</h1>
 
+![studio-ghibli-shopping-cart-screenshot](./readmeassets/react-shopping-cart-screenshot-.png)
+
 ## Description
 
 Studio Ghibli Shopping Cart is an e-commerce web application built using React and designed to allow users to browse, search and purchase films from the world of Studio Ghibli.
