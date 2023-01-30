@@ -45,7 +45,7 @@ const CheckOutSummary = ({
           </tr>
           <tr className="checkout__table-totals">
             <td colSpan={2}>Tax:</td>
-            <td>$0.00</td>
+            <td>$0</td>
           </tr>
           <tr className="checkout__table-totals">
             <td colSpan={2}>Shipping:</td>
