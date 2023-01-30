@@ -81,6 +81,7 @@ const SearchBar = ({ className, isSearchBarExpanded, handleClickSearch }) => {
             onChange={(e) => handleChange(e)}
             value={searchValue}
             name="q"
+            autoComplete="off"
           />
           <input
             type="submit"

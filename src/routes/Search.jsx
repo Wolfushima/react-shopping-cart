@@ -80,6 +80,7 @@ const Search = () => {
                 placeholder="Search"
                 onChange={(e) => handleChange(e)}
                 value={searchValue}
+                autoComplete="off"
               />
               <input type="submit" value="&#xf101;" />
             </form>
