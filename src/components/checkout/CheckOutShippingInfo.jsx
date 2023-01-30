@@ -15,7 +15,6 @@ const CheckOutShippingInfo = ({
         name={`${formSection}[email]`}
         onChange={handleChange}
         id={`${formSection}_email_address`}
-        required
       />
     </div>
     <div className="checkout__h4">
@@ -32,7 +31,6 @@ const CheckOutShippingInfo = ({
         name={`${formSection}[firstname]`}
         onChange={handleChange}
         id={`${formSection}_first_name`}
-        required
       />
     </div>
     <div className="checkout__lastname">
@@ -42,7 +40,6 @@ const CheckOutShippingInfo = ({
         name={`${formSection}[lastname]`}
         onChange={handleChange}
         id={`${formSection}_last_name`}
-        required
       />
     </div>
     <div className="checkout__phone">
@@ -53,7 +50,6 @@ const CheckOutShippingInfo = ({
         onChange={handleChange}
         id={`${formSection}_phone_number`}
         pattern="[0-9]+"
-        required
       />
     </div>
     <div className="checkout__address">
@@ -63,7 +59,6 @@ const CheckOutShippingInfo = ({
         name={`${formSection}[address]`}
         onChange={handleChange}
         id={`${formSection}_address`}
-        required
       />
     </div>
     <div className="checkout__address2">
@@ -73,7 +68,6 @@ const CheckOutShippingInfo = ({
         name={`${formSection}[address2]`}
         onChange={handleChange}
         id={`${formSection}_address_2`}
-        required
       />
     </div>
     <div className="checkout__city">
@@ -83,7 +77,6 @@ const CheckOutShippingInfo = ({
         name={`${formSection}[city]`}
         onChange={handleChange}
         id={`${formSection}_city`}
-        required
       />
     </div>
     <div className="checkout__state">
@@ -92,7 +85,6 @@ const CheckOutShippingInfo = ({
         name={`${formSection}[state]`}
         onChange={handleChange}
         value={valueState}
-        required
       >
         {valueCountry === 'US' ? <CheckOutUSStateOptions /> : <CheckOutCAStateOptions />}
       </select>
@@ -105,7 +97,6 @@ const CheckOutShippingInfo = ({
         onChange={handleChange}
         id={`${formSection}_zip_code`}
         pattern="[0-9]+"
-        required
       />
     </div>
     <div className="checkout__country">
@@ -114,7 +105,6 @@ const CheckOutShippingInfo = ({
         id={`${formSection}_country`}
         onChange={handleChange}
         value={valueCountry}
-        required
       >
         <option value="US">United States</option>
         <option value="CA">Canada</option>
