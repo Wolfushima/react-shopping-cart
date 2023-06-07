@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-shopping-cart/static/css/main.56865ef8.css",
-    "main.js": "/react-shopping-cart/static/js/main.0ebec076.js",
+    "main.css": "/react-shopping-cart/static/css/main.3cae4016.css",
+    "main.js": "/react-shopping-cart/static/js/main.b8fcab1a.js",
     "static/media/howls-moving-castle.mp4": "/react-shopping-cart/static/media/howls-moving-castle.8bd549a2dd49c412eb71.mp4",
     "static/media/spirited-away.mp4": "/react-shopping-cart/static/media/spirited-away.1a5a2950078663c4e95a.mp4",
     "static/media/aboutimg.jpg": "/react-shopping-cart/static/media/aboutimg.fbfe79e5c5ac35aff721.jpg",
@@ -15,7 +15,7 @@
     "index.html": "/react-shopping-cart/index.html"
   },
   "entrypoints": [
-    "static/css/main.56865ef8.css",
-    "static/js/main.0ebec076.js"
+    "static/css/main.3cae4016.css",
+    "static/js/main.b8fcab1a.js"
   ]
 }
