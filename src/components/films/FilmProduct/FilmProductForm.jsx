@@ -1,4 +1,5 @@
 import React from 'react';
+import CheckMarkImg from '../../../assets/images/check-mark.png';
 
 const RadioBtn = ({
   id, value, labelName, checked, handleChange,
@@ -7,6 +8,7 @@ const RadioBtn = ({
     <input type="radio" id={id} name="version" value={value} checked={checked} onChange={handleChange} />
     <label htmlFor={id}>
       {labelName}
+      <img src={CheckMarkImg} alt="Check Mark" />
     </label>
   </div>
 );
