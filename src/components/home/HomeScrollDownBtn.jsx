@@ -1,4 +1,5 @@
 import React from 'react';
+import DownChevronImg from '../../assets/images/down-chevron.png';
 
 const HomeScrollDownBtn = ({ scrollToId }) => (
   <div className="home-scroll-down-btn">
@@ -9,7 +10,9 @@ const HomeScrollDownBtn = ({ scrollToId }) => (
       onClick={() => {
         document.getElementById(scrollToId).scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
       }}
-    />
+    >
+      <img src={DownChevronImg} alt="Down Chevron" />
+    </button>
   </div>
 );
 
