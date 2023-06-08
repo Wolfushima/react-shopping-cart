@@ -9,11 +9,11 @@ const FooterNewsletter = () => (
       </p>
     </div>
     <div className="footer__signup-form">
-      <label htmlFor="email">
-        <input type="email" name="email" placeholder="E-mail Address" />
+      <label htmlFor="email-newsletter">
+        <input type="email" name="email" placeholder="E-mail Address" id="email-newsletter" />
       </label>
-      <label htmlFor="signup">
-        <input type="submit" value="Sign Up" name="signup" />
+      <label htmlFor="signup-newsletter">
+        <input type="submit" value="Sign Up" name="signup" id="signup-newsletter" />
       </label>
     </div>
   </div>
